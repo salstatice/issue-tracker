@@ -85,7 +85,7 @@ Sample usage:
 `/api/issues/{project}?open=true&assigned_to=Joe`
 
 Sample return:
-```json
+```js
 [
     { 
         "_id": "5871dda29faedc3491ff93bb",
@@ -110,7 +110,7 @@ This endpoint adds a new issue ticket to a project. If this is the first time a 
 * created_by
 
 Sample request:
-```json
+```js
 { 
   issue_title: "Missing alpaca",
   issue_text: "Ran away last Monday.",
@@ -119,7 +119,7 @@ Sample request:
 ```
 
 Sample response:
-```json
+```js
 // if required field(s) is/are missing
 { error: "required field(s) missing" }
 
@@ -150,7 +150,7 @@ This endpoint edits an issue ticket with new information. The only immutable fie
 * status_text
 
 Sample request:
-```json
+```js
 { 
   _id: "6051138ad9b53f0085489f6c"
   issue_title: "Found alpaca, need follow-up",
@@ -160,8 +160,8 @@ Sample request:
 ```
 
 Sample response:
-```json
-// if id is Missing
+```js
+// if id is missing
 { error: "missing _id" }
 
 // if id is invalid or non-existing in the database
@@ -180,13 +180,13 @@ Sample response:
 This endpoint deletes an issue ticket from a requested project. The only required field is `_id`.
 
 Sample request:
-```json
+```js
 { _id: "6051138ad9b53f0085489f6c" }
 ```
 
 Sample response:
-```json
-// if id is Missing
+```js
+// if id is missing
 { error: "missing _id" }
 
 // if id is invalid or non-existing in the database
